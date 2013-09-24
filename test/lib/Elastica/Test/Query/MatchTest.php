@@ -21,6 +21,8 @@ class MatchTest extends BaseTest
         $fuzzyRewrite = 'constant_score_boolean';
         $prefixLength = 3;
         $maxExpansions = 12;
+        $zeroTermQuery = "all";
+        $cutoffFrequency = 0.1;
 
         $query = new Match();
         $query->setFieldQuery($field, $testQuery);
@@ -33,6 +35,8 @@ class MatchTest extends BaseTest
         $query->setFieldFuzzyRewrite($field, $fuzzyRewrite);
         $query->setFieldPrefixLength($field, $prefixLength);
         $query->setFieldMaxExpansions($field, $maxExpansions);
+        $query->setFieldZeroTermsQuery($field, $zeroTermQuery);
+        $query->setFieldCutoffFrequency($field, $cutoffFrequency);
 
         $expectedArray = array(
             'match' => array(
@@ -46,7 +50,9 @@ class MatchTest extends BaseTest
                     'fuzziness' => $fuzziness,
                     'fuzzy_rewrite' => $fuzzyRewrite,
                     'prefix_length' => $prefixLength,
-                    'max_expansions' => $maxExpansions
+                    'max_expansions' => $maxExpansions,
+                    'zero_terms_query' => $zeroTemQuery,
+                    'cutoff_frequency' => $cutoffFrequency
                 )
             )
         );
