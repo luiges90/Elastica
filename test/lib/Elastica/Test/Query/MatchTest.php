@@ -51,7 +51,7 @@ class MatchTest extends BaseTest
                     'fuzzy_rewrite' => $fuzzyRewrite,
                     'prefix_length' => $prefixLength,
                     'max_expansions' => $maxExpansions,
-                    'zero_terms_query' => $zeroTemQuery,
+                    'zero_terms_query' => $zeroTermQuery,
                     'cutoff_frequency' => $cutoffFrequency
                 )
             )
